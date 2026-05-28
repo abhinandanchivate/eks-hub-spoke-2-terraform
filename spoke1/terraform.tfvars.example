@@ -1,0 +1,24 @@
+# spoke1/terraform.tfvars.example
+# Copy to terraform.tfvars and fill in values.
+# DO NOT commit terraform.tfvars to source control.
+
+aws_region         = "ap-south-1"
+project            = "myapp"
+environment        = "prod"
+vpc_cidr           = "10.1.0.0/16"
+kubernetes_version = "1.29"
+
+node_instance_types = ["t3.large"]
+node_desired        = 2
+node_min            = 1
+node_max            = 5
+
+# Set via environment variables instead of this file:
+# export TF_VAR_postgres_password="<strong-password>"
+# export TF_VAR_mongodb_root_password="<strong-password>"
+# export TF_VAR_mongodb_password="<strong-password>"
+
+postgres_username = "appuser"
+postgres_database = "appdb"
+mongodb_username  = "appuser"
+mongodb_database  = "appdb"
